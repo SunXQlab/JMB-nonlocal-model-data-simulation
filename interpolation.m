@@ -7,17 +7,17 @@ set(0, 'defaultTextInterpreter', 'latex');
 
 % Import SPOT  data
 csv1 = importdata('spot.csv');
-spotX = csv1.data(:, 3);  % X coordinates of SPOTs
-spotY = csv1.data(:, 4);  % Y coordinates of SPOTs
+spotX = csv1.data(:, 2);  % X coordinates of SPOTs
+spotY = csv1.data(:, 3);  % Y coordinates of SPOTs
 
 % Import cell type proportion data
 csv2 = importdata('st_ct_proportion.csv');
 
 % Extract phenotype data
-phenotypeData = csv1.data(:, 2);  % Phenotype expression values
+phenotypeData = csv1.data(:, 1);  % HIF1A expression values
 
-% Extract cell type proportions (scaled appropriately)
-malignantData = csv2.data(:, 1) ;  % Malignant cell proportion (scaled)
+% Extract cell type proportions 
+malignantData = csv2.data(:, 1) ;     % Malignant cell proportion
 endothelialData = csv2.data(:, 5);      % Endothelial cell proportion
 
 %% Create grid for interpolation
